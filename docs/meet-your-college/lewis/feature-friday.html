@@ -1,0 +1,389 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Panther Portal — Feature Friday: College to Career</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- GSU fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;family=Oswald:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <style type="text/css">/* ===== Base ===== */
+    html, body { margin:0; padding:0; }
+    body{
+      font-family:'Lato', Arial, sans-serif;
+      background-color:#f2f4f7;
+      color:#111111;
+      line-height:1.5;
+    }
+
+    .panther-portal-page-wrapper{
+      max-width:900px;
+      margin:24px auto;
+      padding:0 16px 32px;
+    }
+
+    /* ===== Card ===== */
+    .panther-portal-card{
+      background-color:#ffffff;
+      border-radius:8px;
+      padding:24px 28px;
+      margin-top:64px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      border:1px solid #e0e6ed;
+    }
+
+    /* ===== Headings ===== */
+    .panther-portal-kicker{
+      font-family:'Oswald','Lato',Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      font-size:0.85rem;
+      margin:0 0 8px;
+      color:#00669E;
+    }
+
+    .panther-portal-heading{
+      font-family:'Oswald','Lato',Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:1.5rem;
+      margin:0 0 10px;
+      color:#0039A6 !important;
+    }
+
+    .panther-portal-subtext{
+      margin:0;
+      font-size:1rem;
+      color:#333333;
+    }
+
+    /* ===== Header + buttons row ===== */
+    .pp-hero{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .pp-hero-left{
+      min-width:240px;
+      flex:1 1 560px;
+    }
+
+    .pp-hero-right{
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      align-self:center;
+    }
+
+    /* ===== Buttons (blocked, centered) ===== */
+    .pp-btn{
+      display:flex;
+      width:100%;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 10px;
+      font-size:0.78rem;
+      border-radius:0;
+      border:1px solid #0039A6;
+      background-color:#0039A6;
+      color:#FFFFFF !important;
+      cursor:pointer;
+      font-weight:900;
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      transition:background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      user-select:none;
+      box-sizing:border-box;
+      text-align:center;
+      white-space:normal;
+    }
+
+    .pp-btn:hover{
+      background-color:#0039A6;
+      color:#FFFFFF !important;
+      border-color:#0039A6;
+      box-shadow:0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .pp-btn:focus{
+      outline:2px solid #00AEEF;
+      outline-offset:2px;
+    }
+
+    .pp-btn--secondary{
+      border-color:#d7e2ee;
+      background:#ffffff;
+      color:#0039A6 !important;
+    }
+
+    .pp-btn--secondary:hover{
+      border-color:#0039A6;
+      background:#ffffff;
+      color:#0039A6 !important;
+    }
+
+    .pp-btn-row{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      width:min(260px, 100%);
+    }
+
+    /* ===== Feature shell ===== */
+    .pp-feature-shell{
+      margin-top:14px;
+      border:1px solid #d7e2ee;
+      border-radius:8px;
+      overflow:hidden;
+      background:#ffffff;
+      box-shadow:0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .pp-feature-header{
+      padding:12px 12px 10px;
+      background:#f7f9fb;
+      border-bottom:1px solid #d7e2ee;
+    }
+
+    .pp-feature-header h3{
+      margin:0 0 4px;
+      font-family:'Oswald','Lato',Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:0.10em;
+      font-size:0.95rem;
+      color:#0039A6;
+    }
+
+    .pp-feature-header p{
+      margin:0;
+      color:#555555;
+      font-size:0.92rem;
+    }
+
+    /* ===== Feature cards (horizontal) ===== */
+    .pp-scroll-wrap{ position:relative; }
+
+    .pp-horizontal-scroll{
+      display:flex;
+      gap:12px;
+      padding:12px;
+      overflow-x:auto;
+      overflow-y:hidden;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      background:#ffffff;
+    }
+
+    .pp-horizontal-scroll:focus{
+      outline:2px solid #00AEEF;
+      outline-offset:2px;
+    }
+
+    .pp-fade-left, .pp-fade-right{
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:40px;
+      pointer-events:none;
+      z-index:2;
+    }
+    .pp-fade-left{
+      left:0;
+      background:linear-gradient(to right, #ffffff 15%, rgba(255,255,255,0));
+    }
+    .pp-fade-right{
+      right:0;
+      background:linear-gradient(to left, #ffffff 15%, rgba(255,255,255,0));
+    }
+
+    .pp-story-card{
+      flex:0 0 560px;
+      scroll-snap-align:start;
+      border:1px solid #d7e2ee;
+      border-radius:8px;
+      background:#ffffff;
+      box-shadow:0 1px 4px rgba(0,0,0,0.06);
+      overflow:hidden;
+      min-width:0;
+      display:grid;
+      grid-template-columns:0.95fr 1.05fr;
+    }
+
+    .pp-story-media{
+      background:#0b1f53;
+      position:relative;
+      min-height:260px;
+    }
+
+    .pp-story-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .pp-story-badge{
+      position:absolute;
+      top:10px;
+      left:10px;
+      background:rgba(0,57,166,0.95);
+      color:#ffffff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:0.72rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      border:1px solid rgba(255,255,255,0.35);
+    }
+
+    .pp-story-body{
+      padding:14px 14px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .pp-story-title{
+      margin:0;
+      font-weight:900;
+      font-size:1.02rem;
+      color:#111111;
+      line-height:1.25;
+    }
+
+    .pp-story-meta{
+      margin:0;
+      color:#555555;
+      font-size:0.92rem;
+    }
+
+    .pp-story-synopsis{
+      margin:0;
+      color:#333333;
+      font-size:0.98rem;
+    }
+
+    .pp-impact{
+      background:#f7f9fb;
+      border:1px solid #d7e2ee;
+      border-radius:8px;
+      padding:10px 10px;
+      color:#333333;
+      font-size:0.95rem;
+    }
+
+    .pp-impact strong{ font-weight:900; color:#111111; }
+
+    .pp-story-actions{
+      margin-top:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    /* Slate sometimes overrides anchor colors */
+    a, a:visited { color:#00669E; }
+
+    /* ===== Responsive ===== */
+    @media (max-width:860px){
+      .pp-story-card{ flex-basis:92vw; grid-template-columns:1fr; }
+      .pp-story-media{ min-height:240px; }
+      .pp-story-actions{ grid-template-columns:1fr; }
+    }
+
+    @media (max-width:640px){
+      .panther-portal-card{
+        padding:18px 20px;
+        margin-top:32px;
+      }
+      .panther-portal-heading{ font-size:1.3rem; }
+      .pp-btn-row{ width:100%; }
+      .pp-fade-left, .pp-fade-right{ width:26px; }
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Slate embed (keep if needed for your portal environment) --><script async="async" src="https://slate-admissions-showcase.technolutions.net/live?cmd=embed&amp;id=21823ec5-3dff-405f-b5b9-052a637a783b"></script>
+    <div class="panther-portal-page-wrapper">
+      <div class="panther-portal-card">
+        <div class="pp-hero">
+          <div class="pp-hero-left">
+            <div class="panther-portal-kicker">
+              FEATURE FRIDAY
+            </div>
+
+            <h2 class="panther-portal-heading">
+              College To Career: Panthers In Action
+            </h2>
+
+            <p class="panther-portal-subtext">
+              These short stories spotlight Georgia State students and alumni turning learning into real momentum — building skills, experience, and professional confidence that power Georgia’s workforce and strengthen our communities.
+            </p>
+          </div>
+
+          <div class="pp-hero-right">
+            <div class="pp-btn-row">
+              <a class="pp-btn" href="https://news.gsu.edu/feature-friday/?utm_source=panther_portal&amp;utm_medium=portal&amp;utm_campaign=yield&amp;utm_content=feature_friday_hub" rel="noopener" target="_blank">Explore Feature Friday </a><a class="pp-btn pp-btn--secondary" href="https://news.gsu.edu/?utm_source=panther_portal&amp;utm_medium=portal&amp;utm_campaign=yield&amp;utm_content=news_hub" rel="noopener" target="_blank"> Georgia State News Hub </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-feature-shell">
+          <div class="pp-feature-header">
+            <h3>
+              Featured Stories
+            </h3>
+
+            <p>
+              Swipe left/right to browse stories.
+            </p>
+          </div>
+
+          <div class="pp-scroll-wrap">
+            <div aria-hidden="true" class="pp-fade-left">
+            </div>
+
+            <div aria-hidden="true" class="pp-fade-right">
+            </div>
+
+            <div class="pp-horizontal-scroll" tabindex="0">
+              <!-- STORY 1 — Angelica Smith -->
+              <div class="pp-story-card">
+                <div class="pp-story-media">
+                  <span class="pp-story-badge">Lewis College</span><img alt="Angelica Smith" loading="lazy" src="https://news.gsu.edu/files/2023/08/My-project3-1.jpg" />
+                </div>
+
+                <div class="pp-story-body">
+                  <p class="pp-story-title">
+                    Angelica Smith
+                  </p>
+
+                  <p class="pp-story-meta">
+                    Nursing • Feature Friday
+                  </p>
+
+                  <p class="pp-story-synopsis">
+                    Angelica shares how Georgia State helped her grow from uncertainty into confidence — with coaching, leadership experiences, and hands-on preparation designed to make the transition from classroom to clinical settings feel real and achievable.
+                  </p>
+
+                  <div class="pp-impact">
+                    <strong>Why this matters:</strong> Georgia State’s college-to-career focus helps keep Georgia strong by preparing graduates who can step into high-need roles ready to serve, lead and succeed — especially in fields that directly impact community well-being.
+                  </div>
+
+                  <div class="pp-story-actions">
+                    <a class="pp-btn" href="https://news.gsu.edu/2023/08/10/angelica-smith/?utm_source=panther_portal&amp;utm_medium=portal&amp;utm_campaign=yield&amp;utm_content=feature_friday_story_angelica_smith" rel="noopener" target="_blank">Read The Story </a><a class="pp-btn pp-btn--secondary" href="https://lewis.gsu.edu/?utm_source=panther_portal&amp;utm_medium=portal&amp;utm_campaign=yield&amp;utm_content=feature_friday_lewis_cta" rel="noopener" target="_blank"> Lewis College </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Duplicate this .pp-story-card block to add more Feature Friday stories --><!-- Tip: keep image sizes similar for best layout. -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
