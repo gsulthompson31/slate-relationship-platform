@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Panther Portal — Your College at Georgia State</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- GSU fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style type="text/css">
+    /* ===== Base ===== */
+    html, body { margin:0; padding:0; }
+    body{
+      font-family:'Lato', Arial, sans-serif;
+      background-color:#f2f4f7;
+      color:#111111;
+      line-height:1.5;
+    }
+
+    .panther-portal-page-wrapper{
+      max-width:900px;
+      margin:24px auto;
+      padding:0 16px 32px;
+    }
+
+    /* ===== Card ===== */
+    .panther-portal-card{
+      background-color:#ffffff;
+      border-radius:8px;
+      padding:24px 28px;
+      margin-top:64px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      border:1px solid #e0e6ed;
+    }
+
+    /* ===== Headings ===== */
+    .panther-portal-kicker{
+      font-family:'Oswald','Lato',Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      font-size:0.85rem;
+      margin:0 0 8px;
+      color:#00669E;
+    }
+
+    .panther-portal-heading{
+      font-family:'Oswald','Lato',Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:1.5rem;
+      margin:0 0 10px;
+      color:#0039A6 !important;
+    }
+
+    .panther-portal-subtext{
+      margin:0 0 16px;
+      font-size:1rem;
+      color:#333333;
+    }
+
+    .panther-portal-divider{
+      border-top:2px dotted #00AEEF;
+      margin:16px 0 14px;
+    }
+
+    /* ===== Two-column college layout ===== */
+    .pp-college-layout{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .pp-college-left{
+      background:#f7f9fb;
+      border:1px solid #d7e2ee;
+      border-radius:8px;
+      padding:16px 16px 14px;
+    }
+
+    .pp-college-left h3{
+      margin:0 0 8px;
+      font-family:'Oswald','Lato',Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:0.10em;
+      font-size:1.05rem;
+      color:#0039A6;
+    }
+
+    .pp-college-left p{
+      margin:0 0 10px;
+      color:#333333;
+      font-size:0.98rem;
+    }
+
+    .pp-value-list{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .pp-value-item{
+      background:#ffffff;
+      border:1px solid #d7e2ee;
+      border-radius:8px;
+      padding:12px 12px 10px;
+    }
+
+    .pp-value-item strong{
+      display:block;
+      font-weight:900;
+      color:#111111;
+      margin:0 0 4px;
+      letter-spacing:0.02em;
+    }
+
+    .pp-value-item span{
+      display:block;
+      color:#444444;
+      font-size:0.95rem;
+    }
+
+    /* ===== Video card ===== */
+    .pp-video-card{
+      background:#ffffff;
+      border:1px solid #d7e2ee;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .pp-video-header{
+      padding:12px 12px 10px;
+      background:#f7f9fb;
+      border-bottom:1px solid #d7e2ee;
+    }
+
+    .pp-video-header h3{
+      margin:0 0 4px;
+      font-family:'Oswald','Lato',Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:0.10em;
+      font-size:0.95rem;
+      color:#0039A6;
+    }
+
+    .pp-video-header p{
+      margin:0;
+      color:#555555;
+      font-size:0.92rem;
+    }
+
+    .pp-video-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio:16 / 9;
+      background:#0b1f53;
+    }
+
+    .pp-video-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
+    .pp-video-actions{
+      padding:12px;
+    }
+
+    /* ===== Buttons (blocked, centered) ===== */
+    .pp-btn{
+      display:flex;
+      width:100%;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 10px;
+      font-size:0.78rem;
+      border-radius:0;
+      border:1px solid #0039A6;
+      background-color:#0039A6;
+      color:#FFFFFF !important;
+      cursor:pointer;
+      font-weight:900;
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      transition:background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      user-select:none;
+      box-sizing:border-box;
+      text-align:center;
+      white-space:normal;
+    }
+
+    .pp-btn:hover{
+      background-color:#0039A6;
+      color:#FFFFFF !important;
+      border-color:#0039A6;
+      box-shadow:0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .pp-btn:focus{
+      outline:2px solid #00AEEF;
+      outline-offset:2px;
+    }
+
+    .pp-btn--secondary{
+      border-color:#d7e2ee;
+      background:#ffffff;
+      color:#0039A6 !important;
+    }
+
+    .pp-btn--secondary:hover{
+      border-color:#0039A6;
+      background:#ffffff;
+      color:#0039A6 !important;
+    }
+
+    .pp-small-note{
+      margin:0;
+      color:#666666;
+      font-size:0.88rem;
+    }
+
+    .pp-btn-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      width:100%;
+    }
+
+    /* Slate sometimes overrides anchor colors */
+    a, a:visited { color:#00669E; }
+
+    /* ===== Responsive ===== */
+    @media (max-width:860px){
+      .pp-college-layout{ grid-template-columns:1fr; }
+    }
+
+    @media (max-width:640px){
+      .panther-portal-card{
+        padding:18px 20px;
+        margin-top:32px;
+      }
+      .panther-portal-heading{ font-size:1.3rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Slate embed (keep if needed for your portal environment) -->
+  <script async src="https://slate-admissions-showcase.technolutions.net/live?cmd=embed&amp;id=21823ec5-3dff-405f-b5b9-052a637a783b"></script>
+
+  <div class="panther-portal-page-wrapper">
+    <div class="panther-portal-card">
+
+      <div class="panther-portal-kicker">MEET YOUR ACADEMIC HOME</div>
+      <h2 class="panther-portal-heading">Andrew Young School of Policy Studies</h2>
+      <p class="panther-portal-subtext">
+        At Georgia State, policy is personal — it’s how communities thrive. The Andrew Young School helps you turn curiosity into impact with learning rooted in Atlanta and connected to careers that shape the public good.
+      </p>
+
+      <hr class="panther-portal-divider" />
+
+      <div class="pp-college-layout">
+        <!-- Left: Brand-perspective story -->
+        <div class="pp-college-left">
+          <h3>Build Solutions. Lead With Data. Serve Communities.</h3>
+          <p>
+            The Andrew Young School of Policy Studies is where ambitious students learn to tackle real challenges — from local neighborhoods
+            to global systems. You’ll explore how decisions are made, how resources are managed, and how data can guide smarter, more equitable outcomes.
+          </p>
+          <p>
+            With Atlanta as your classroom, you’ll gain perspective and experience that employers value: analytical thinking, ethical leadership,
+            communication, and the ability to turn complex problems into clear action.
+          </p>
+
+          <ul class="pp-value-list">
+            <li class="pp-value-item">
+              <strong>Learning Connected To Real Policy Work</strong>
+              <span>Coursework shaped by real issues and real partners — so your education stays relevant and career-ready.</span>
+            </li>
+            <li class="pp-value-item">
+              <strong>Skills Employers Ask For</strong>
+              <span>Data, research, budgeting, planning and leadership — strengths that translate across public, nonprofit and private sectors.</span>
+            </li>
+            <li class="pp-value-item">
+              <strong>Atlanta Advantage</strong>
+              <span>Opportunities to engage with government, nonprofits and organizations where policy becomes practice.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Video + CTA -->
+        <div class="pp-video-card" aria-label="Andrew Young School introduction video and website links">
+          <div class="pp-video-header">
+            <h3>Meet Your Dean</h3>
+            <p>Dr. Thomas J. Vicino</p>
+          </div>
+
+          <div class="pp-video-wrap">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/u3SCxsHljXc"
+              title="Andrew Young School of Policy Studies video"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="pp-video-header">
+            <h3>Learn More About Your School</h3>
+            <p class="pp-small-note">
+              Explore programs, student opportunities and pathways that help you move from policy ideas to professional impact.
+            </p>
+          </div>
+
+          <div class="pp-video-actions">
+            <div class="pp-btn-grid">
+              <a class="pp-btn" target="_blank" rel="noopener"
+                 href="https://aysps.gsu.edu/?utm_source=panther_portal&utm_medium=portal&utm_campaign=yield&utm_content=school_intro">
+                Visit Andrew Young School
+              </a>
+
+              <a class="pp-btn pp-btn--secondary" target="_blank" rel="noopener"
+                 href="https://aysps.gsu.edu/academics/?utm_source=panther_portal&utm_medium=portal&utm_campaign=yield&utm_content=explore_programs">
+                Explore Programs
+              </a>
+
+              <a class="pp-btn pp-btn--secondary" target="_blank" rel="noopener"
+                 href="https://aysps.gsu.edu/student-resources/?utm_source=panther_portal&utm_medium=portal&utm_campaign=yield&utm_content=student_resources">
+                Student Resources
+              </a>
+
+              <a class="pp-btn pp-btn--secondary" target="_blank" rel="noopener"
+                 href="https://news.gsu.edu/school/andrew-young-school-of-policy-studies/?utm_source=panther_portal&utm_medium=portal&utm_campaign=yield&utm_content=aysps_news">
+                School News
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
